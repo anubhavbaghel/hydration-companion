@@ -1,56 +1,74 @@
-# Welcome to your Expo app 👋
+# 💧 Hydration Companion
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Hydration Companion is a smart mobile application designed to help users maintain healthy hydration habits throughout the day. The app tracks daily water intake, provides reminders to drink water, and visualizes hydration progress to encourage consistent hydration.
 
-## Get started
+Built with **React Native and Expo**, the app focuses on simplicity, performance, and an intuitive user experience.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🚀 Features
 
-2. Start the app
+* 💧 **Daily Water Tracking** – Log and monitor water intake easily
+* 🔔 **Smart Reminders** – Get timely notifications to stay hydrated
+* 📊 **Progress Dashboard** – Visualize daily hydration goals
+* ⚡ **Fast & Lightweight** – Built using modern React Native architecture
+* 📱 **Cross-Platform** – Works on both Android and iOS
+* 🧠 **Context-based State Management** for efficient data flow
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠 Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* **React Native**
+* **Expo**
+* **TypeScript**
+* **React Context API**
+* **Tailwind / NativeWind**
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📂 Project Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+hydration-companion
+│
+├── assets/                     # Static resources used in the app
+│   ├── expo.icon/              # Expo icon assets
+│   ├── fonts/                  # Custom fonts
+│   ├── images/                 # App images and graphics
+│   ├── media/                  # Media files
+│   └── notification/           # Notification icons and assets
+│
+├── src/
+│   ├── app/                    # Screens and navigation (Expo Router)
+│   ├── components/             # Reusable UI components
+│   ├── context/                # Global state management
+│   ├── logic/                  # Core business logic
+│   ├── notifications/          # Notification handling system
+│   └── storage/                # Local data persistence
+│
+├── .vscode/                    # Editor configuration
+├── optimization_plan.md        # Performance and optimization notes
+├── .gitignore                  # Git ignored files
+└── README.md                   # Project documentation
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
+## 📈 Goal of the Project
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+The goal of this project is to build a **clean, performant hydration tracking app** while exploring modern mobile development practices using React Native and Expo.
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🔮 Future Improvements
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+* AI-based hydration recommendations
+* Apple Health / Google Fit integration
+* Smart wearable support
+* Gamification and streak tracking
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🤝 Contributions
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Contributions, suggestions, and feedback are welcome!
