@@ -25,33 +25,6 @@ Built with **React Native**, the app focuses on providing simple user experience
 
 ---
 
-## 📂 Project Structure
-
-hydration-companion
-│
-├── assets/                     # Static resources used in the app
-│   ├── expo.icon/              # Expo icon assets
-│   ├── fonts/                  # Custom fonts
-│   ├── images/                 # App images and graphics
-│   ├── media/                  # Media files
-│   └── notification/           # Notification icons and assets
-│
-├── src/
-│   ├── app/                    # Screens and navigation (Expo Router)
-│   ├── components/             # Reusable UI components
-│   ├── context/                # Global state management
-│   ├── logic/                  # Core business logic
-│   ├── notifications/          # Notification handling system
-│   └── storage/                # Local data persistence
-│
-├── .vscode/                    # Editor configuration
-├── optimization_plan.md        # Performance and optimization notes
-├── .gitignore                  # Git ignored files
-└── README.md                   # Project documentation
-```
-
----
-
 ## 📈 Goal of the Project
 
 The goal of this project is to build a **clean, hydration tracking app** while exploring modern mobile development practices using React Native and Expo.
