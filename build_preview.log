@@ -1,0 +1,318 @@
+Resolved "production" environment for the build. Learn more: https://docs.expo.dev/eas/environment-variables/#setting-the-environment-for-your-builds
+No environment variables with visibility "Plain text" and "Sensitive" found for the "production" environment on EAS.
+
+✔ Using remote Android credentials (Expo server)
+✔ Using Keystore from configuration: Build Credentials tVhIw4wv2h (default)
+⠋ Compressing project files✔ Compressed project files 1s (28.5 MB)
+⠋ Computing project fingerprint⠙ Computing project fingerprint⠹ Computing project fingerprint⠸ Computing project fingerprint⠼ Computing project fingerprint⠴ Computing project fingerprint⠦ Computing project fingerprint⠧ Computing project fingerprint⠇ Computing project fingerprint⠏ Computing project fingerprint⠋ Computing project fingerprint⠙ Computing project fingerprint⠹ Computing project fingerprint⠸ Computing project fingerprint⠼ Computing project fingerprint⠴ Computing project fingerprint⠦ Computing project fingerprint⠧ Computing project fingerprint⠇ Computing project fingerprint⠏ Computing project fingerprint⠋ Computing project fingerprint✔ Computed project fingerprint
+ANDROID_NDK_HOME environment variable was not specified, continuing build without NDK
+[SETUP_WORKINGDIR] Preparing workingdir /tmp/anubhav/eas-build-local-nodejs/defd9f41-ffb9-435b-9f47-e3ac13d0e747
+[START_BUILD] Starting build
+  "job": {
+    "type": "managed",
+    "platform": "android",
+    "projectRootDirectory": ".",
+    "projectArchive": {
+      "type": "PATH",
+      "path": "/tmp/anubhav/eas-cli-nodejs/ff29da57-ca1b-49b2-8c5e-16ce23ca9630.tar.gz"
+    },
+    "builderEnvironment": {
+      "env": {}
+    },
+    "cache": {
+      "disabled": false,
+      "paths": [],
+      "clear": false
+    },
+    "updates": {},
+    "buildType": "apk",
+    "username": "anubhavbaghel",
+    "version": {
+      "versionCode": "1"
+    },
+    "experimental": {},
+    "mode": "build",
+    "triggeredBy": "EAS_CLI",
+    "appId": "9a1ce992-5289-43a8-9cd5-b485fa305768",
+    "initiatingUserId": "040c0479-fc2f-4659-ac7b-e9d776769bc4"
+  }
+Local build, skipping project archive refresh
+[READ_EAS_JSON] Using eas.json:
+[READ_EAS_JSON] {
+  "cli": {
+    "version": ">= 18.0.6",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
+
+[READ_PACKAGE_JSON] Using package.json:
+[READ_PACKAGE_JSON] {
+  "name": "hydration-companion",
+  "main": "expo-router/entry",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "expo start",
+    "reset-project": "node ./scripts/reset-project.js",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "lint": "expo lint"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-community/datetimepicker": "8.6.0",
+    "@react-native-community/slider": "5.1.2",
+    "@react-navigation/bottom-tabs": "^7.7.3",
+    "@react-navigation/elements": "^2.8.1",
+    "@react-navigation/native": "^7.1.28",
+    "expo": "~55.0.4",
+    "expo-constants": "~55.0.7",
+    "expo-dev-client": "~55.0.10",
+    "expo-device": "~55.0.9",
+    "expo-font": "~55.0.4",
+    "expo-glass-effect": "~55.0.7",
+    "expo-haptics": "~55.0.8",
+    "expo-image": "~55.0.6",
+    "expo-linking": "~55.0.7",
+    "expo-notifications": "~55.0.12",
+    "expo-router": "~55.0.3",
+    "expo-splash-screen": "~55.0.10",
+    "expo-status-bar": "~55.0.4",
+    "expo-symbols": "~55.0.4",
+    "expo-system-ui": "~55.0.9",
+    "expo-web-browser": "~55.0.9",
+    "nativewind": "^4.2.2",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.2",
+    "react-native-circular-progress": "^1.4.1",
+    "react-native-circular-progress-indicator": "^4.4.2",
+    "react-native-gesture-handler": "~2.30.0",
+    "react-native-haptics": "^0.0.0",
+    "react-native-progress-circle": "^2.1.0",
+    "react-native-reanimated": "^4.2.1",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-screens": "~4.23.0",
+    "react-native-svg": "^15.15.3",
+    "react-native-web": "~0.21.0",
+    "react-native-worklets": "0.7.2",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "react-native-svg-transformer": "^1.5.3",
+    "typescript": "~5.9.2"
+  },
+  "private": true
+}
+[INSTALL_DEPENDENCIES] Running "npm ci --include=dev" in /tmp/anubhav/eas-build-local-nodejs/defd9f41-ffb9-435b-9f47-e3ac13d0e747/build directory
+[INSTALL_DEPENDENCIES] npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+[INSTALL_DEPENDENCIES] npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+[INSTALL_DEPENDENCIES] npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+[INSTALL_DEPENDENCIES] npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+[INSTALL_DEPENDENCIES] npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+[INSTALL_DEPENDENCIES] npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+[INSTALL_DEPENDENCIES] npm warn deprecated glob@9.3.5: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+[INSTALL_DEPENDENCIES] added 846 packages, and audited 847 packages in 5s
+[INSTALL_DEPENDENCIES] 88 packages are looking for funding
+[INSTALL_DEPENDENCIES]   run `npm fund` for details
+[INSTALL_DEPENDENCIES] found 0 vulnerabilities
+The NODE_ENV environment variable is required but was not specified. Ensure the project is bundled with Expo CLI or NODE_ENV is set.
+Proceeding without mode-specific .env
+[READ_APP_CONFIG] Using app configuration:
+[READ_APP_CONFIG] {
+  "name": "Hydra",
+  "slug": "hydration-companion",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "icon": "./assets/images/adaptive-icon.png",
+  "scheme": "hydra",
+  "userInterfaceStyle": "automatic",
+  "android": {
+    "adaptiveIcon": {
+      "backgroundColor": "#E6F4FE",
+      "foregroundImage": "./assets/images/adaptive-icon.png",
+      "backgroundImage": "./assets/images/background.png",
+      "monochromeImage": "./assets/images/android-icon-monochrome.png"
+    },
+    "predictiveBackGestureEnabled": false,
+    "package": "com.anubhavbaghel.hydrationcompanion"
+  },
+  "web": {
+    "output": "static",
+    "favicon": "./assets/images/favicon.png",
+    "bundler": "metro"
+  },
+  "plugins": [
+    "expo-router",
+    [
+      "expo-splash-screen",
+      {
+        "backgroundColor": "#ffffff",
+        "image": "./assets/images/splash-icon.png",
+        "dark": {
+          "image": "./assets/images/splash-icon-dark.png",
+          "backgroundColor": "#000000"
+        },
+        "imageWidth": 300
+      }
+    ],
+    [
+      "expo-image",
+      {
+        "disableLibdav1d": true
+      }
+    ],
+    "expo-font",
+    "@react-native-community/datetimepicker",
+    [
+      "expo-notifications",
+      {
+        "icon": "./assets/images/notification_icon.png",
+        "color": "#ffffff",
+        "defaultChannel": "default"
+      }
+    ]
+  ],
+  "experiments": {
+    "typedRoutes": true,
+    "reactCompiler": true
+  },
+  "extra": {
+    "router": {},
+    "eas": {
+      "projectId": "9a1ce992-5289-43a8-9cd5-b485fa305768"
+    }
+  },
+  "sdkVersion": "55.0.0",
+  "platforms": [
+    "ios",
+    "android",
+    "web"
+  ]
+}
+[RUN_EXPO_DOCTOR] Running "expo doctor"
+[RUN_EXPO_DOCTOR] Running 17 checks on your project...
+[RUN_EXPO_DOCTOR] 15/17 checks passed. 2 checks failed. Possible issues detected:
+[RUN_EXPO_DOCTOR] Use the --verbose flag to see more details about passed checks.
+[RUN_EXPO_DOCTOR] ✖ Check that no duplicate dependencies are installed
+[RUN_EXPO_DOCTOR] Your project contains duplicate native module dependencies, which should be de-duplicated.
+[RUN_EXPO_DOCTOR] Native builds may only contain one version of any given native module, and having multiple versions of a single Native module installed may lead to unexpected build errors.
+[RUN_EXPO_DOCTOR] Found duplicates for expo-haptics:
+[RUN_EXPO_DOCTOR]   ├─ expo-haptics@55.0.8 (at: node_modules/expo-haptics)
+[RUN_EXPO_DOCTOR]   └─ expo-haptics@8.4.0 (at: node_modules/react-native-haptics/node_modules/expo-haptics)
+[RUN_EXPO_DOCTOR] Advice:
+[RUN_EXPO_DOCTOR] Resolve your dependency issues and deduplicate your dependencies. Learn more: https://expo.fyi/resolving-dependency-issues
+[RUN_EXPO_DOCTOR] 
+[RUN_EXPO_DOCTOR] ✖ Check that packages match versions required by installed Expo SDK
+[RUN_EXPO_DOCTOR] 
+[RUN_EXPO_DOCTOR] 🔧 Patch version mismatches
+[RUN_EXPO_DOCTOR] package                  expected  found  
+[RUN_EXPO_DOCTOR] react-native-reanimated  4.2.1     4.2.2  
+[RUN_EXPO_DOCTOR] 
+[RUN_EXPO_DOCTOR] 
+[RUN_EXPO_DOCTOR] 
+[RUN_EXPO_DOCTOR] 1 package out of date.
+[RUN_EXPO_DOCTOR] Advice:
+[RUN_EXPO_DOCTOR] Use 'npx expo install --check' to review and upgrade your dependencies.
+[RUN_EXPO_DOCTOR] To ignore specific packages, add them to "expo.install.exclude" in package.json. Learn more: https://expo.fyi/dependency-validation
+[RUN_EXPO_DOCTOR] 2 checks failed, indicating possible issues with the project.
+[RUN_EXPO_DOCTOR] Command "expo doctor" failed.
+Error: npx -y expo-doctor exited with non-zero code: 1
+    at ChildProcess.completionListener (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/spawn-async/build/spawnAsync.js:42:23)
+    at Object.onceWrapper (node:events:623:26)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)
+    ...
+    at spawnAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/spawn-async/build/spawnAsync.js:7:23)
+    at spawn (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/turtle-spawn/dist/index.js:16:47)
+    at runExpoDoctor (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/common/setup.js:143:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/common/setup.js:122:17
+    at async BuildContext.runBuildPhase (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/context.js:123:28)
+    at async setupAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/common/setup.js:120:9)
+    at async buildAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/android.js:41:5)
+    at async runBuilderWithHooksAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/common.js:12:13)
+    at async Object.androidBuilder (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/android.js:28:16)
+[PREBUILD] - Creating native directory (./android)
+[PREBUILD] ✔ Created native directory
+[PREBUILD] - Updating package.json
+[PREBUILD] ✔ Updated package.json | no changes
+[PREBUILD] - Running prebuild
+[PREBUILD] ✔ Finished prebuild
+[PREBUILD] Running "npm install --include=dev" in /tmp/anubhav/eas-build-local-nodejs/defd9f41-ffb9-435b-9f47-e3ac13d0e747/build directory
+[PREBUILD] up to date, audited 847 packages in 1s
+[PREBUILD] 88 packages are looking for funding
+[PREBUILD] run `npm fund` for details
+[PREBUILD] found 0 vulnerabilities
+[RESTORE_CACHE] Local builds do not support restoring cache
+[PREPARE_CREDENTIALS] Writing secrets to the project's directory
+[PREPARE_CREDENTIALS] Injecting signing config into build.gradle
+[EAGER_BUNDLE] Using src/app as the root directory for Expo Router.
+[EAGER_BUNDLE] React Compiler enabled
+[EAGER_BUNDLE] Starting Metro Bundler
+[EAGER_BUNDLE] Android node_modules/expo-router/entry.js ▓▓▓▓▓▓░░░░░░░░░░ 43.7% (341/516)
+[ABORT] Received termination signal.
+npx -y eas-cli-local-build-plugin@18.2.0 eyJqb2IiOnsidHlwZSI6Im1hbmFnZWQiLCJwbGF0Zm9ybSI6ImFuZHJvaWQiLCJwcm9qZWN0Um9vdERpcmVjdG9yeSI6Ii4iLCJwcm9qZWN0QXJjaGl2ZSI6eyJ0eXBlIjoiUEFUSCIsInBhdGgiOiIvdG1wL2FudWJoYXYvZWFzLWNsaS1ub2RlanMvZmYyOWRhNTctY2ExYi00OWIyLThjNWUtMTZjZTIzY2E5NjMwLnRhci5neiJ9LCJidWlsZGVyRW52aXJvbm1lbnQiOnsiZW52Ijp7fX0sImNhY2hlIjp7ImRpc2FibGVkIjpmYWxzZSwicGF0aHMiOltdLCJjbGVhciI6ZmFsc2V9LCJzZWNyZXRzIjp7ImJ1aWxkQ3JlZGVudGlhbHMiOnsia2V5c3RvcmUiOnsiZGF0YUJhc2U2NCI6Ii91Mys3UUFBQUFJQUFBQUJBQUFBQVFBZ1lURXlNREZrTVRJNE9XVTNOelUwWm1KallUZzNaVFV3T0RGbE1XVXlNek1BQUFHY3RPZ1VYQUFBQlFBd2dnVDhNQTRHQ2lzR0FRUUJLZ0lSQVFFRkFBU0NCT2pyODJTMDFROWRMZUpPVXZCT2UwRS9NSFZUY3d5d2RJWjRJMjlkdkYzSWs1QlNPdFJiNWh3azZsM20vT25wYkVVWjVOejM3VS9wTWVsdEY0TzZlcUUwK2RWZ3VxZk1TSG9lSFg4MzJ4OWZvMjBCM0ZXd1M2ZGlMQzR6WUpiZVVpeFNJNWxqVDdXdHo0VlZxa1d0STdHbzh5cEwyS2J3eWNTVWJsV1dmdjBaZERhK2QxTkljNmZvcFAyeHczbGNPZ3BkYy9tVjU1UjdkNTNOU3poandsODJYTXpTTENaVGF0VGRjSUdiUW1oQVZEWG8xVG1PSmJNWnNoMWZVQmVvbkp0MVRqUDRVcFJtaXhGNFdwRFNZWHI2RE05TUJJdTBEYURXcU1lL252U1hkc3dqMlVuYUZubVJOYXQxbmlPWmtqK0Q2MVRoWFduc0J3UkMrSjlIMFExL1B6OGplUTlOd1puOFQxQ3c0ajRybjRGcXZlZVhsK2hhWjFpcGNaS3FRV0dGQ3JWS3M0K3JONjVrMFA0YXdjR3pTUFZpMXpzWUk2czNmMzhyckRINzF4WVZIeW1rbmdNNVhFZ25MUmREOERXSGJsSHFJc2RkTUNCancxcnZkRk5sNlpSeCtWekluOTBZQVFzUTVPVUFQVy9MaktCVEU5NURGTnRwUmFNVEc0VjhVK2R5QXcyZUFrRFRVcmpEVFFkNlEwdFphVHZWOE9PUjdGRDNCcjRqOStMMDVzWko0SGlIdlNIcVBySUtsektWRFg2UGhnbEdMeVk5bWs0YTJYYWpXSkZSMmZUR1MwdEliOGxQdGFMY1BFRUM4RjhLanNGNHBvQlp3TlV2Nm1mWHJjanAyTlpkTUo4MVZpazZwKzJ2ZjVkY2FSRlMyOHlDZ3JOUEg3Z2RRTytUSG4vOTg5Yk1iVkJTTlNrZ3JnblJFRm1BZXFrelVPYUZXTXFOSXZXeDVqMk8rckNIbzQ3aFA4M3N4SVUvNThSV2F2OTc3c0oybXg1dGF1aWNzZjdrb1o3VlVpU1pjNlFpVllpTzFJVVFOZDd4VkJFTXVxdFVWT29NM0I3bkgvQXBaeXE5T21oNk1NRXpMa3MybHUyTDEzaVp6NDY4ME40K3E1Wm5Hb1JXM0pINHVpdy9ab3Njbm5QSWw2QzlaeVZYY0tubzNzWlZrYmx2TWc0UWd2cW1acUhXQnNIdWtJeWRJZyt0ZlZ2SWRadU5sTGd4SzUzNUZkZ28xZ0xoeThlWVhZUVJuRG9HTi9YM3lXTytQOXZQWG1zM0NoUzg0V0N1WnNxYTM3WkpEU1Q4MVUySGZBbnB6TG8wd0ZLSzlVdVA5TVg5OHRCUjAxK3NFZm9lUFN2dElrSTR2bldvZjJIQzFMUHhROEYxek9hOUlqTGg2WjJ5eWlURGNXbnNCZ2NweHVHQ1JoYTVFOS8wdy9wUDI3SlRIeGd3a2NEZWpoYnRiVG94TXd1SjlKNDBydDZjMCtHV05oZkY3b01CTFVUZllhQytyNU5ZN2VZT00vSlVPMmhNOU1zcDFKSlRMMFZlYXdjSWl5NTlzY0ZqcWdIT0VpYmRKQVpHbnVFMEd6cUY2Z1BURVZiN0xhZmxRWnFmcGt5aTBKRCt3dmJwWVpmcnBLNzliYk1KcUx5R0xRSDRUUFdkOVZBekttR05BOSt6bWZGazhjS3lhcTUwMVpWVVg0YWhxVzBIR0h5cXBGZnBzMlZuQUY5UEtMZkh6TVY3WjNkTkxFMUR0SmhVQzJZNUFXTFVsdkRaZ0lxbXFnVDBjejR4SmEzb0ZwZysyUnd6aGZ2enduOW1MVm9hWEpLb0xXRlM5QnViUG5Ma0F3RVJKVVlacGFOTzJqSU9Fb3VXMSs2b1l6cUxWbURaelBnZFFpT2FYdXNVWFBzL0p4WXBhR05ydFk5djlQMWRBVDg0QWJ1Z1plcmZZekI3NDNadkFRbkZsWWpvcTUwZHdWLzdidERJTmRTQjlndytyaEljSXVIMStiZjhGWGkrY3lKN0VjSkRvUE9YVSttY0xqL2RCQTdlR2FBMmJoQno0cWxnZkYwMzA5dHFRQ29OdWV6Zlk0VXBreTQyeHdYR2hJMVpqUHpJRzhBeU8xdzEvSTBtMW5MbTAzWTVEYjErZUtCNWpXYTRiakxaWm9hUm1JSFdCbERXQkQ3Nmxxeml0dHlJWGE2aE96V2l3elNCYXEweVJGL1IrUHFCb3BIMHFBQUFBQUVBQlZndU5UQTVBQUFETWpDQ0F5NHdnZ0lXb0FNQ0FRSUNDUUR1NHFBbGRKYy8vREFOQmdrcWhraUc5dzBCQVFzRkFEQkVNUXN3Q1FZRFZRUUdFd0pWVXpFSk1BY0dBMVVFQ0JNQU1Ra3dCd1lEVlFRSEV3QXhDVEFIQmdOVkJBb1RBREVKTUFjR0ExVUVDeE1BTVFrd0J3WURWUVFERXdBd0lCY05Nall3TXpBek1UZ3hNelUwV2hnUE1qQTFNekEzTVRreE9ERXpOVFJhTUVReEN6QUpCZ05WQkFZVEFsVlRNUWt3QndZRFZRUUlFd0F4Q1RBSEJnTlZCQWNUQURFSk1BY0dBMVVFQ2hNQU1Ra3dCd1lEVlFRTEV3QXhDVEFIQmdOVkJBTVRBRENDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFPVlhTR2pyM00zSGR3YXVwRzY2LzBCSk1Nd1dTODU5dldENmgrMDJQNlNmUWNid08yRFhESStDcWdoT1NwSTVlVGFzUnAybmJZRE5wcFBITk9ZbjVxUVZJeTFSSERGT1RtVzEva0tWNEhEUnJnVGRhQzE0d2xyZWdtQnV0Q2xmUmFtNjNZQlU5aHdZV0RXSmI5alJKa3pHL1R5cEw0eTNpc3VSeGNmbXQwbHNGRVd6Y1daQkUwTy9yb201TjNpaXNLNlpJd0RvNXUzTTU3WUl0dld3d0w2anpVdU1mNnk3TmNFUVllSXRTMHMyajA3NWtUSFBTUGNYOGZ2UGN5RS8zZit4ajF1VXNuaDZjK3ptdXVCRmp2ekVFMEhBdGd5UHg5OUFYUStQU2Q4elVKOTl2RGVsREU4UFZTOUxKMm9MaXpyS2YrWUZpVld4WjJIanhFbkUyYzBDQXdFQUFhTWhNQjh3SFFZRFZSME9CQllFRk85ek0vQVFEbHZ0K0ZyYmtZTFlraHQ4ZUl5Mk1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRRElITE5rQWtLOC9IclVmYTcwUGF3RElCM1JGQkwvS1VwUlUwTURvaUM4aUU5OUZnMm1tZWxxeXdIWURhem1VdXdZRUdKaXN6TXZiZFk1VjI2M3l2bktOQ3IwOEtKZmpCL3pNK0VlaXA5MmN4OUwzWThGRitoR1pabC9Wc0FYVjIzUXBZbnZ0TXhoR1BQUlVBVURHZFRPbWdBSG1yU1c1NFM2WnFXeFVYcVFsM1V3dFdMVU1SNDhhMVp2RUdKSUF4cWFrVlRwK2EyZldoTkIzNERlVDFQWFUvVHBIS1M0M1o2NWxsdDNuZGlmK1k5NHpUdmoxNWxpbUtDOEpUM1BlQ01MckRQOG4vdm5YVHJlTms1ZzJCUjZaZlYwUW5STExUd0NVYW9SdUpjL0NyS21xemNmR0FGempTQ3hYdTRDbUdNVitpUjZoSGxvayt2S0N1SHI3NUJOTW1rY3FqQUtqUXdxOXJicE9FKy94bE1MVHJZPSIsImtleXN0b3JlUGFzc3dvcmQiOiJlZWU3MTE3YjFiMmYxNzQ5M2E5MzhhY2Q3ZTNlYTFhNCIsImtleUFsaWFzIjoiYTEyMDFkMTI4OWU3NzU0ZmJjYTg3ZTUwODFlMWUyMzMiLCJrZXlQYXNzd29yZCI6ImM2NzkxMWM4NzgyOGI3YzVhMjM4NWJiODVjNzRiZDY5In19fSwidXBkYXRlcyI6e30sImJ1aWxkVHlwZSI6ImFwayIsInVzZXJuYW1lIjoiYW51YmhhdmJhZ2hlbCIsInZlcnNpb24iOnsidmVyc2lvbkNvZGUiOiIxIn0sImV4cGVyaW1lbnRhbCI6e30sIm1vZGUiOiJidWlsZCIsInRyaWdnZXJlZEJ5IjoiRUFTX0NMSSIsImFwcElkIjoiOWExY2U5OTItNTI4OS00M2E4LTljZDUtYjQ4NWZhMzA1NzY4IiwiaW5pdGlhdGluZ1VzZXJJZCI6IjA0MGMwNDc5LWZjMmYtNDY1OS1hYzdiLWU5ZDc3Njc2OWJjNCJ9LCJtZXRhZGF0YSI6eyJ0cmFja2luZ0NvbnRleHQiOnsidHJhY2tpbmdfaWQiOiI4NGMzMWI4Mi1hZWExLTQ2OTItYjdmMi01N2YwM2U2NjcyODAiLCJwbGF0Zm9ybSI6ImFuZHJvaWQiLCJzZGtfdmVyc2lvbiI6IjU1LjAuMCIsImFjY291bnRfaWQiOiJmYzMxNGMwMS05MDAyLTRkM2ItYWM2NS03YjRlOWI3NTQyMTAiLCJwcm9qZWN0X2lkIjoiOWExY2U5OTItNTI4OS00M2E4LTljZDUtYjQ4NWZhMzA1NzY4IiwicHJvamVjdF90eXBlIjoibWFuYWdlZCIsImRldl9jbGllbnQiOmZhbHNlLCJkZXZfY2xpZW50X3ZlcnNpb24iOiI1NS4wLjE2Iiwibm9fd2FpdCI6ZmFsc2UsInJ1bl9mcm9tX2NpIjpmYWxzZSwibG9jYWwiOnRydWV9LCJhcHBCdWlsZFZlcnNpb24iOiIxIiwiYXBwVmVyc2lvbiI6IjEuMC4wIiwiY2xpVmVyc2lvbiI6IjE4LjMuMCIsIndvcmtmbG93IjoibWFuYWdlZCIsImNyZWRlbnRpYWxzU291cmNlIjoicmVtb3RlIiwic2RrVmVyc2lvbiI6IjU1LjAuMCIsImZpbmdlcnByaW50SGFzaCI6ImQ4NGQ5YmJiOGUyNjk3NzM0ZTkyYmRjZWJmZGQwYjUwODYzNTc1YjciLCJyZWFjdE5hdGl2ZVZlcnNpb24iOiIwLjgzLjIiLCJkaXN0cmlidXRpb24iOiJzdG9yZSIsImFwcE5hbWUiOiJIeWRyYSIsImFwcElkZW50aWZpZXIiOiJjb20uYW51YmhhdmJhZ2hlbC5oeWRyYXRpb25jb21wYW5pb24iLCJidWlsZFByb2ZpbGUiOiJwcmV2aWV3IiwiZ2l0Q29tbWl0SGFzaCI6IjkxZDlkYTQ2MzdlNTk5MzJiNDgwYzQ0ODE1YWNmMDJkYWM4ODBiZjIiLCJnaXRDb21taXRNZXNzYWdlIjoiUmV2aXNlIFJFQURNRSBmb3IgSHlkcmF0aW9uIENvbXBhbmlvbiBhcHBcblxuVXBkYXRlZCBSRUFETUUgdG8gcmVmbGVjdCBwcm9qZWN0IG5hbWUgYW5kIGZlYXR1cmVzLiIsImlzR2l0V29ya2luZ1RyZWVEaXJ0eSI6dHJ1ZSwidXNlcm5hbWUiOiJhbnViaGF2YmFnaGVsIiwicnVuV2l0aE5vV2FpdEZsYWciOmZhbHNlLCJydW5Gcm9tQ0kiOmZhbHNlLCJkZXZlbG9wbWVudENsaWVudCI6ZmFsc2UsInJlcXVpcmVkUGFja2FnZU1hbmFnZXIiOiJucG0iLCJzaW11bGF0b3IiOmZhbHNlfX0= exited with signal: SIGTERM
+    Error: build command failed.
+[EAGER_BUNDLE] 
+Error: npx expo export:embed --eager --platform android --dev false exited with signal: SIGINT
+    at ChildProcess.completionListener (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/spawn-async/build/spawnAsync.js:41:23)
+    at Object.onceWrapper (node:events:623:26)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Socket.<anonymous> (node:internal/child_process:457:11)
+    at Socket.emit (node:events:508:28)
+    at Pipe.<anonymous> (node:net:346:12)
+    ...
+    at spawnAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/spawn-async/build/spawnAsync.js:7:23)
+    at spawn (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/turtle-spawn/dist/index.js:16:47)
+    at runExpoCliCommand (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/utils/project.js:25:43)
+    at eagerBundleAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/common/eagerBundle.js:11:43)
+    at /home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/android.js:105:54
+    at BuildContext.runBuildPhase (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/context.js:123:34)
+    at buildAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/android.js:104:19)
+    at async runBuilderWithHooksAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/common.js:12:13)
+    at async Object.androidBuilder (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/android.js:28:16)
+    at async buildAndroidAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/eas-cli-local-build-plugin/dist/android.js:43:12)
+[ON_BUILD_ERROR_HOOK] 
+Error: package.json does not exist in /tmp/anubhav/eas-build-local-nodejs/defd9f41-ffb9-435b-9f47-e3ac13d0e747/build
+    at readPackageJson (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/utils/project.js:43:15)
+    at runHookIfPresent (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/utils/hooks.js:26:55)
+    at /home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/common.js:20:52
+    at BuildContext.runBuildPhase (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/context.js:123:34)
+    at runBuilderWithHooksAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/common.js:19:23)
+    at async Object.androidBuilder (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/android.js:28:16)
+    at async buildAndroidAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/eas-cli-local-build-plugin/dist/android.js:43:12)
+    at async buildAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/eas-cli-local-build-plugin/dist/build.js:54:29)
+    at async main (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/eas-cli-local-build-plugin/dist/main.js:16:9)
+[ON_BUILD_COMPLETE_HOOK] 
+Error: package.json does not exist in /tmp/anubhav/eas-build-local-nodejs/defd9f41-ffb9-435b-9f47-e3ac13d0e747/build
+    at readPackageJson (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/utils/project.js:43:15)
+    at runHookIfPresent (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/utils/hooks.js:26:55)
+    at /home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/common.js:26:52
+    at BuildContext.runBuildPhase (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/context.js:123:34)
+    at runBuilderWithHooksAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/common.js:25:23)
+    at async Object.androidBuilder (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/@expo/build-tools/dist/builders/android.js:28:16)
+    at async buildAndroidAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/eas-cli-local-build-plugin/dist/android.js:43:12)
+    at async buildAsync (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/eas-cli-local-build-plugin/dist/build.js:54:29)
+    at async main (/home/anubhav/.npm/_npx/b4c16b6647933048/node_modules/eas-cli-local-build-plugin/dist/main.js:16:9)
+
+Build failed

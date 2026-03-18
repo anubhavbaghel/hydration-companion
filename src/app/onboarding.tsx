@@ -1,6 +1,7 @@
 import BedTimeStep from "@/components/steps/BedTimeStep";
 import GenderStep from "@/components/steps/GenderStep";
 import HydrationPlanStep from "@/components/steps/HydrationPlanStep";
+import NameStep from "@/components/steps/NameStep";
 import WakeTimeStep from "@/components/steps/WakeTimeStep";
 import WeightStep from "@/components/steps/WeightStep";
 import WelcomeScreen from "@/components/steps/WelcomeScreen";
@@ -19,6 +20,7 @@ export default function Onboarding() {
         weight: 50,
         wakeTime: null,
         bedTime: null,
+        name: ""
     });
 
     const finishOnboarding = async (plan) => {
@@ -57,6 +59,13 @@ export default function Onboarding() {
 
     };
 
+    const setName = (name: string) => {
+        setFormData((prev)=>({
+            ...prev,
+            name: name
+        }))
+    }
+
     const renderStep = () => {
 
         if (step === 0) {
@@ -73,7 +82,13 @@ export default function Onboarding() {
                     gender={formData.gender} />
             )
         }
-        if (step === 2) {
+
+        if (step === 2){
+            <NameStep 
+            setName={setName}
+            name = {formData.name}/>
+        }
+        if (step === 3) {
             return (
                 <WeightStep
                     setWeight={setWeight}
@@ -81,14 +96,14 @@ export default function Onboarding() {
                     gender={formData.gender} />
             )
         }
-        if (step === 3) {
+        if (step === 4) {
             return (
                 <WakeTimeStep
                     setWakeTime={setWakeTime}
                     gender={formData.gender} />
             )
         }
-        if (step === 4) {
+        if (step === 5) {
             return (
                 <BedTimeStep
                     setBedTime={setBedTime}
@@ -96,7 +111,7 @@ export default function Onboarding() {
                 />
             )
         }
-        if (step === 5) {
+        if (step === 6) {
             return (
                 <HydrationPlanStep
                     formData={formData}
@@ -109,14 +124,15 @@ export default function Onboarding() {
     // Helper to determine if the "Next" button should be disabled
     const isNextDisabled =
         (step === 1 && !formData.gender) ||
-        (step === 2 && formData.weight <= 0) ||
-        (step === 3 && !formData.wakeTime) ||
-        (step === 4 && !formData.bedTime);
+        (step === 2 && !formData.name) ||
+        (step === 3 && formData.weight <= 0) ||
+        (step === 4 && !formData.wakeTime) ||
+        (step === 5 && !formData.bedTime);
 
     return (
         <View className="flex-1 items-center justify-center gap-20 px-5 py-5">
 
-            {(step < 5 && step > 0) && (<Text className="text-xl absolute top-1">Step {step} / 4</Text>)}
+            {(step < 6 && step > 0) && (<Text className="text-xl absolute top-1">Step {step} / 4</Text>)}
 
             {renderStep()}
 

@@ -8,7 +8,7 @@ import AlarmClock from "../../assets/media/alarm-clock-svgrepo-com.svg";
 
 
 export default function Dashboard() {
-    const { hydrationData, updateWater, resetApp } = useHydrationProvider();
+    const { hydrationData, updateWater, resetApp, userData  } = useHydrationProvider();
 
     if (!hydrationData) return null;
 
@@ -20,6 +20,11 @@ export default function Dashboard() {
             className="flex-1 items-center justify-between py-5 px-5"
         >
             <Header></Header>
+
+            {/* Greetings */}
+            <Text>Hi, {userData.name}</Text>
+            <Text>Your Today's Water Intake is: {waterDrank}</Text>
+
             <CircularProgress
                 value={waterDrank}
                 radius={120}

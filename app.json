@@ -62,6 +62,12 @@
       "eas": {
         "projectId": "9a1ce992-5289-43a8-9cd5-b485fa305768"
       }
+    },
+    "ios": {
+      "bundleIdentifier": "com.anubhavbaghel.hydrationcompanion",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     }
   }
 }

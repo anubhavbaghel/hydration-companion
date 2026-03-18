@@ -26,12 +26,12 @@ const NotificationManager = () => {
       await Notifications.setNotificationCategoryAsync('hydration_reminder', [
         {
           identifier: 'drank_water',
-          buttonTitle: '💧 I Drank It',
+          buttonTitle: 'I Drank It',
           options: { opensAppToForeground: false },
         },
         {
           identifier: 'snooze',
-          buttonTitle: '😴 Snooze 10m',
+          buttonTitle: 'Snooze',
           options: { opensAppToForeground: false },
         },
       ]);

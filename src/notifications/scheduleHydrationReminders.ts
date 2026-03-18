@@ -14,12 +14,12 @@ export const scheduleHydrationReminders = async (plan) => {
         if (date > new Date()) {
             await Notifications.scheduleNotificationAsync({
                 content: {
-                    title: "Time to hydrate! 🚰",
-                    body: `Drink ${waterPerReminder}ml of water right now.`,
+                    title: "It's time to drink some water!!!",
+                    body: `Drink ${waterPerReminder}ml of water.`,
                     sound: true,
                     categoryIdentifier: 'hydration_reminder',
                     data: { data: waterPerReminder },
-                    
+
                 },
                 trigger: {
                     type: Notifications.SchedulableTriggerInputTypes.DATE,
