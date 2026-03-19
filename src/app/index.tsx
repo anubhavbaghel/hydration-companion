@@ -1,4 +1,5 @@
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import TopNavBar from "@/components/ui/TopNavBar";
 import { useHydrationProvider } from "@/context/HydrationContext";
 import { SplashScreen } from "expo-router";
 import { useEffect } from "react";
@@ -29,6 +30,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <TopNavBar/>
       <Dashboard />
     </SafeAreaView>
   );

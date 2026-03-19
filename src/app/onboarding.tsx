@@ -60,7 +60,7 @@ export default function Onboarding() {
     };
 
     const setName = (name: string) => {
-        setFormData((prev)=>({
+        setFormData((prev) => ({
             ...prev,
             name: name
         }))
@@ -75,6 +75,13 @@ export default function Onboarding() {
         }
 
         if (step === 1) {
+            return (
+                <NameStep
+                    setName={setName}
+                    name={formData.name} />)
+        }
+
+        if (step === 2) {
 
             return (
                 <GenderStep
@@ -83,11 +90,6 @@ export default function Onboarding() {
             )
         }
 
-        if (step === 2){
-            <NameStep 
-            setName={setName}
-            name = {formData.name}/>
-        }
         if (step === 3) {
             return (
                 <WeightStep
@@ -123,8 +125,8 @@ export default function Onboarding() {
 
     // Helper to determine if the "Next" button should be disabled
     const isNextDisabled =
-        (step === 1 && !formData.gender) ||
-        (step === 2 && !formData.name) ||
+        (step === 1 && !formData.name) ||
+        (step === 2 && !formData.gender) ||
         (step === 3 && formData.weight <= 0) ||
         (step === 4 && !formData.wakeTime) ||
         (step === 5 && !formData.bedTime);
@@ -132,11 +134,11 @@ export default function Onboarding() {
     return (
         <View className="flex-1 items-center justify-center gap-20 px-5 py-5">
 
-            {(step < 6 && step > 0) && (<Text className="text-xl absolute top-1">Step {step} / 4</Text>)}
+            {(step < 6 && step > 0) && (<Text className="text-xl absolute top-1">Step {step} / 5</Text>)}
 
             {renderStep()}
 
-            {(step < 5) && (
+            {(step < 6) && (
                 <View
                     className="flex-row w-full px-5 items-center"
                     style={{ justifyContent: step === 0 ? "center" : "space-between" }}

@@ -1,11 +1,46 @@
 import { HydrationProvider, useHydrationProvider } from '@/context/HydrationContext';
+import { loadHydrationData, saveHydrationData } from "@/storage/hydrationdata";
 import * as Notifications from 'expo-notifications';
 import { SplashScreen, Stack } from "expo-router";
+import * as TaskManager from 'expo-task-manager';
 import { useEffect } from "react";
+import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import "../../global.css";
 
+
 SplashScreen.preventAutoHideAsync();
+
+//BG Hydration Update
+const HYDRATION_TASK = 'BACKGROUND_HYDRATION_UPDATE';
+
+TaskManager.defineTask(HYDRATION_TASK, async ({ data, error }: TaskManager.TaskManagerTaskBody<any>) => {
+  if (error) return;
+
+  const { actionIdentifier, notification } = data;
+
+  if (actionIdentifier === 'drank_water') {
+    try {
+      // ✅ ACT DIRECTLY ON STORAGE, NOT CONTEXT
+      const hydrationData = await loadHydrationData();
+
+      // Get the amount from the notification data
+      const amount = notification.request.content.data?.data || 250;
+
+      const updatedData = {
+        ...hydrationData,
+        waterDrank: (hydrationData?.waterDrank || 0) + amount,
+        lastUpdated: new Date().toISOString()
+      };
+
+      await saveHydrationData(updatedData);
+      console.log("Background: Water updated in storage!");
+
+    } catch (e) {
+      console.error("Background task failed:", e);
+    }
+  }
+});
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -22,7 +57,6 @@ const NotificationManager = () => {
 
   useEffect(() => {
     const setupNotifications = async () => {
-      // Configuration remains, but we don't prompt here anymore
       await Notifications.setNotificationCategoryAsync('hydration_reminder', [
         {
           identifier: 'drank_water',
@@ -42,6 +76,8 @@ const NotificationManager = () => {
         vibrationPattern: [0, 250, 250, 250],
         lightColor: '#FF231F7C',
       });
+
+      await Notifications.registerTaskAsync(HYDRATION_TASK);
 
     };
 
@@ -77,6 +113,7 @@ export default function Layout() {
   return (
     <HydrationProvider>
       <NotificationManager />
+      <StatusBar backgroundColor="#ffffff" barStyle="dark-content"></StatusBar>
       <SafeAreaProvider>
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="index" />

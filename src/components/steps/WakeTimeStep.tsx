@@ -21,8 +21,6 @@ export default function WakeTimeStep({ setWakeTime, gender }) {
       setWakeTime(selectedDate);
       setShow(false);
       setIsTimePicked(true);
-      console.log('Wake Time Selected')
-      console.log(new Date(selectedDate))
     }
   };
   const showTimepicker = () => {
