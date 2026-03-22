@@ -1,6 +1,6 @@
 import { generateReminders } from '@/logic/generateReminders';
-import { scheduleHydrationReminders } from '@/notifications/scheduleHydrationReminders';
 import { deleteAppData } from '@/logic/removeUserData';
+import { scheduleHydrationNotifications } from '@/notifications/scheduleHydrationNotifications';
 import { loadHydrationData, saveHydrationData } from '@/storage/hydrationdata';
 import { loadUserData, saveUserData } from '@/storage/userstorage';
 import { createContext, useContext, useEffect, useState } from 'react';
@@ -25,7 +25,7 @@ export const HydrationProvider = ({ children }: { children: React.ReactNode }) =
                     
                     setHydrationData(dailyReset);
                     await saveHydrationData(dailyReset);
-                    await scheduleHydrationReminders(dailyReset); // Reschedule for the new day
+                    await scheduleHydrationNotifications(dailyReset); // Reschedule for the new day
                 } else {
                     setHydrationData(h);
                 }

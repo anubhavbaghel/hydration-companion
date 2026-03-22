@@ -2,7 +2,7 @@
   "expo": {
     "name": "Hydra",
     "slug": "hydration-companion",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/images/adaptive-icon.png",
     "scheme": "hydra",
@@ -47,8 +47,8 @@
       [
         "expo-notifications",
         {
-          "icon": "./assets/images/notification_icon.png",
-          "color": "#ffffff",
+          "icon": "./assets/images/notification.png",
+          "color": "#60A5FA",
           "defaultChannel": "default"
         }
       ]

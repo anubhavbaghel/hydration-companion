@@ -34,7 +34,7 @@ export default function WakeTimeStep({ setWakeTime, gender }) {
         <Text className="text-xl text-gray-600 text-center">Select the time you usually wake up.</Text>
       </View>
 
-      {(gender === 'male') ? (<Image source={require("../../../assets/media/wakeup-boy.avif")} style={{height: 200, width: 200}}/>) : (<Image source={require("../../../assets/media/wakeup-girl.avif")} style={{height: 200, width: 200}}/>)}
+      {(gender === 'Male') ? (<Image source={require("../../../assets/media/wakeup-boy.avif")} style={{height: 200, width: 200}}/>) : (<Image source={require("../../../assets/media/wakeup-girl.avif")} style={{height: 200, width: 200}}/>)}
 
       <Pressable onPress={showTimepicker} className="px-4 py-4 rounded-3xl bg-[#F3E1C5] border border-[#D2C3AF] flex-row items-center gap-5 shadow-xl" >
         {(istimePicked) ? <Text className='text-3xl text-[#0D213A] font-bold'>Change Wakeup Time</Text> : <Text className='text-3xl text-[#0D213A] font-bold'>Pick Wakeup Time</Text>}

@@ -15,7 +15,7 @@ export const deleteAppData = async () => {
   try {
     Notifications.dismissAllNotificationsAsync();
     console.log("All Notifications deleted successfully")
-  } catch (error) {
+  } catch {
     console.error ("Failed to dismiss all the notifications");
   }
 };

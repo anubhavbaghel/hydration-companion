@@ -4,9 +4,17 @@ interface UserData {
   weight: number;
   wakeTime: Date;
   bedTime: Date;
+  name:"";
+  gender:""
 }
 
 export const createHydrationPlan = (userData: UserData) => {
+
+  const bedTime = new Date(userData.bedTime);
+  console.log("bedtime in create Hydration plan")
+  console.log(bedTime)
+
+  const wakeTime = new Date(userData.wakeTime);
 
   const waterDrank = 0;
 
@@ -20,8 +28,14 @@ export const createHydrationPlan = (userData: UserData) => {
 
   const DAY_IN_MS = 24 * 60 * 60 * 1000;
 
-  let diff =
-    userData.bedTime.getTime() - userData.wakeTime.getTime();
+  const bedTimeDate = new Date(userData.bedTime);
+  const wakeTimeDate = new Date(userData.wakeTime);
+
+  if (Number.isNaN(bedTimeDate.getTime()) || Number.isNaN(wakeTimeDate.getTime())) {
+    throw new Error('Invalid wakeTime or bedTime in userData');
+  }
+
+  let diff = bedTimeDate.getTime() - wakeTimeDate.getTime();
 
   if (diff <= 0) {
     diff += DAY_IN_MS;
@@ -30,12 +44,12 @@ export const createHydrationPlan = (userData: UserData) => {
   const activeHours = diff / (1000 * 60 * 60);
 
   const reminders = generateReminders(
-    userData.wakeTime,
-    userData.bedTime,
+    wakeTime,
+    bedTime,
     dailyGoal,
     waterPerReminder
   );
-
+  
   return {
     dailyGoal,
     reminders,

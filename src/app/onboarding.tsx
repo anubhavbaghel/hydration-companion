@@ -6,7 +6,7 @@ import WakeTimeStep from "@/components/steps/WakeTimeStep";
 import WeightStep from "@/components/steps/WeightStep";
 import WelcomeScreen from "@/components/steps/WelcomeScreen";
 import { useHydrationProvider } from "@/context/HydrationContext";
-import { scheduleHydrationReminders } from "@/notifications/scheduleHydrationReminders";
+import { scheduleHydrationNotifications } from "@/notifications/scheduleHydrationNotifications";
 import * as Haptics from 'expo-haptics';
 import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
@@ -26,7 +26,7 @@ export default function Onboarding() {
     const finishOnboarding = async (plan) => {
         await setUserData(formData);
         await setHydrationData(plan);
-        await scheduleHydrationReminders(plan);
+        await scheduleHydrationNotifications(plan);
     };
 
     const setGender = (gender: string) => {
@@ -153,7 +153,7 @@ export default function Onboarding() {
                             }}
                             className="py-3 px-8 border-none rounded-full bg-blue-400"
                         >
-                            {(step === 0) ? <Text className="text-3xl text-white">Let's Start</Text> : <Text className="text-2xl text-white">Back</Text>}
+                            {(step === 0) ? <Text className="text-3xl text-white">Let&apos;s Start</Text> : <Text className="text-2xl text-white">Back</Text>}
                         </Pressable>
                     )}
 
@@ -168,7 +168,7 @@ export default function Onboarding() {
                         className={`py-3 px-8 rounded-full bg-blue-400 items-center justify-center ${isNextDisabled ? 'opacity-70' : 'bg-blue-400'
                             }`}
                     >
-                        {(step === 0) ? <Text className="text-3xl text-white">Let's Start</Text> : <Text className="text-2xl text-white">Next</Text>}
+                        {(step === 0) ? <Text className="text-3xl text-white">Let&apos;s Start</Text> : <Text className="text-2xl text-white">Next</Text>}
                     </Pressable>
                 </View>
             )

@@ -25,14 +25,14 @@ export default function HydrationPlanStep({ formData, finishOnboarding }) {
     <View className="flex-1 justify-between items-center w-full gap-2">
       {/* ... rest of the component stays the same ... */}
 
-      <View className="flex h-[10%] flex-col justify-center bg-blue-300 w-full items-center rounded-2xl py-4">
-        <Text className="text-4xl text-center font-semibold text-gray-700 w-full">Your Hydration Goal</Text>
+      <View className="flex h-[10%] flex-col justify-center w-full items-center rounded-2xl ">
+        <Text className="text-4xl text-center font-bold w-full">Your Hydration Goal</Text>
       </View>
 
       <View className="flex h-[20%] flex-col justify-center gap-2 border border-gray-200 w-full items-center rounded-2xl py-4">
-        <Text className='text-xl text-gray-500'>DAILY TARGET</Text>
+        <Text className='text-xl'>DAILY TARGET</Text>
         <Text className="text-5xl text-blue-400 font-semibold">{plan.dailyGoal} ml</Text>
-        <Text className='text-md text-gray-600 text-center'>You are all set to get hydrated {`\n`}and energized!</Text>
+        <Text className='text-md text-center'>You are all set to get hydrated {`\n`}and energized!</Text>
       </View>
 
       <View className="flex-row h-[10%] justify-center w-full items-center gap-2">
@@ -64,7 +64,7 @@ export default function HydrationPlanStep({ formData, finishOnboarding }) {
         <ScrollView className="w-full flex-1">
           {plan.reminders.map((time, index) => (
 
-            <View key={index} className="flex-row flex-1 w-full border border-blue-200 bg-gray-100 rounded-xl px-5 py-3 text-gray-700  items-center justify-center my-1">
+            <View key={index} className="flex-row flex-1 w-full border border-blue-400 rounded-xl px-5 py-3 text-gray-700  items-center justify-center my-1">
               <View className="flex-row flex-1 items-center justify-start w-full gap-2">
                 <Image source={require("../../../assets/media/notifications_active.png")} style={{ width: 20, height: 20 }} />
                 <Text className="text-xl">
@@ -88,7 +88,7 @@ export default function HydrationPlanStep({ formData, finishOnboarding }) {
       <Pressable
         onPress={handleStart}
         className="h-[8%] bg-blue-400 border border-gray-200 w-full rounded-full px-5 py-3 items-center justify-center flex">
-        <Text className="text-4xl font-bold text-gray-100">Start Hydrating!</Text>
+        <Text className="text-4xl font-bold text-white">Start Hydrating!</Text>
       </Pressable>
 
     </View >

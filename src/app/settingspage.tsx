@@ -1,4 +1,7 @@
 import { useHydrationProvider } from "@/context/HydrationContext";
+import { createHydrationPlan } from "@/logic/createHydrationplan";
+import { scheduleHydrationNotifications } from "@/notifications/scheduleHydrationNotifications";
+import DateTimePicker from '@react-native-community/datetimepicker';
 import * as Haptics from 'expo-haptics';
 import { Link } from "expo-router";
 import React, { useState } from "react";
@@ -14,20 +17,37 @@ import SaveIcon from "../../assets/icons/save.svg";
 import SunriseIcon from "../../assets/icons/sunrise.svg";
 import WeightIcon from "../../assets/icons/weight.svg";
 
-
-
 export default function SettingsPage() {
 
-    const [loading, setLoading] = useState(true)
     const [isModalVisible, setIsModalVisible] = useState(false)
-    const { resetApp, userData, setUserData } = useHydrationProvider();
-    const wakeTime = new Date(userData.wakeTime)
-    const bedTime = new Date(userData.bedTime)
+    const { resetApp, userData, setUserData, setHydrationData } = useHydrationProvider();
+
+    const [wakeTime, setWakeTime] = useState(userData?.wakeTime ? new Date(userData.wakeTime) : new Date())
+    const [bedTime, setBedTime] = useState(userData?.bedTime ? new Date(userData.bedTime) : new Date())
     const [isEditModeOn, setIsEditModeOn] = useState(false)
     const [name, setName] = useState(userData.name)
     const [gender, setGender] = useState(userData.gender)
     const [weight, setWeight] = useState(userData.weight)
     const [isSaveComplete, setIsSaveComplete] = useState(null)
+
+    const [showWakeTimePicker, setShowWakeTimePicker] = useState(false);
+    const [showBedTimePicker, setShowBedTimePicker] = useState(false);
+
+    const changeWakeTime = (event, selectedDate) => {
+
+        if (selectedDate) {
+            setShowWakeTimePicker(false);
+            setWakeTime(selectedDate)
+        }
+    };
+
+    const changeBedTime = (event, selectedDate) => {
+
+        if (selectedDate) {
+            setShowBedTimePicker(false);
+            setBedTime(selectedDate)
+        }
+    };
 
     const selectGender = async (gender: string) => {
         setGender(gender)
@@ -39,13 +59,29 @@ export default function SettingsPage() {
             ...userData,
             name: name,
             gender: gender,
-            weight: weight
+            weight: weight,
+            wakeTime: wakeTime.toISOString(),
+            bedTime: bedTime.toISOString()
         }
 
+        //After clicking on save we need to 
+        //Save data to Async Storage through context
         await setUserData(updatedData)
 
         setIsEditModeOn(false)
         setIsSaveComplete(true)
+
+        //Recalculate and create new Hydration Plan and update it to Async Storage through context
+        const updatedHydrationData =  createHydrationPlan(updatedData)
+        console.log("This is Hydration Data")
+        console.log(updatedHydrationData)
+        
+        setHydrationData(updatedHydrationData)
+        
+        //Generate updated Reminders
+
+        //Set Notifications
+        await scheduleHydrationNotifications(updatedHydrationData)
 
     }
 
@@ -95,28 +131,31 @@ export default function SettingsPage() {
 
 
 
-                        <View className="bg-white rounded-3xl py-4 px-5 gap-5">
+                        <View className="bg-white rounded-3xl py-4 px-5 gap-1">
+
+                            {/* Name */}
                             <View className="gap-5 flex-row items-center">
                                 <ProfileIcon fill={"gray"} width={30} height={30} />
-                                {(isEditModeOn) ? <TextInput value={name} onChangeText={newText => setName(newText)} className={`text-3xl flex-1 px-3 rounded-xl `}>
+                                {(isEditModeOn) ? <TextInput value={name} onChangeText={newText => setName(newText)} className={`text-2xl flex-1 px-3 rounded-xl `}>
 
                                 </TextInput> : <TextInput editable={false}
-                                    value={name} onChangeText={newText => setName(newText)} className={`text-3xl flex-1 px-3 rounded-xl `}>
+                                    value={name} onChangeText={newText => setName(newText)} className={`text-2xl flex-1 px-3 rounded-xl `}>
 
                                 </TextInput>}
                             </View>
 
+                            {/* Gender */}
                             <View className={"flex-row gap-5 items-center"}>
                                 {/* <Text className="text-xl font-semibold">Gender</Text> */}
                                 {(gender === "male") ? (<MaleIcon fill={"gray"} width={30} height={30} />) : (<FemaleIcon fill={"gray"} width={30} height={35} />)}
                                 {(isEditModeOn) ? (<Pressable onPress={() => setIsModalVisible(true)}>
-                                    <Text className={`text-3xl px-3 py-3 rounded-xl  `}>{gender}</Text>
+                                    <Text className={`text-2xl px-3 py-3 rounded-xl  `}>{gender}</Text>
                                 </Pressable>) : (<Pressable disabled={true} onPress={() => setIsModalVisible(true)}>
-                                    <Text className={`text-3xl px-3 py-3 rounded-xl  `}>{gender}</Text>
+                                    <Text className={`text-2xl px-3 py-3 rounded-xl  `}>{gender}</Text>
                                 </Pressable>)}
                             </View>
 
-                            {/* Selection Popup */}
+                            {/* Gender Selection Popup */}
                             <Modal
                                 transparent={true}
                                 visible={isModalVisible}
@@ -135,10 +174,11 @@ export default function SettingsPage() {
                                 </TouchableWithoutFeedback>
                             </Modal>
 
+                            {/* Weight */}
                             <View className="flex-row gap-5 items-center">
                                 {/* <Text className="text-xl font-semibold">Weight</Text> */}
                                 <WeightIcon fill={"gray"} width={30} height={30} />
-                                {(isEditModeOn) ? (<TextInput value={String(weight)} onChangeText={newWeight => setWeight(newWeight)} className={`text-3xl flex-1 px-3 rounded-xl `}></TextInput>) : (<TextInput editable={false} value={String(weight)} onChangeText={newWeight => setWeight(newWeight)} className={`text-3xl flex-1 px-3 rounded-xl `}></TextInput>)}
+                                {(isEditModeOn) ? (<TextInput value={weight?.toString()} keyboardType="numeric" onChangeText={newWeight => setWeight(Number(newWeight))} className={`text-2xl flex-1 px-3 rounded-xl `}></TextInput>) : (<TextInput editable={false} value={weight?.toString()} className={`text-2xl flex-1 px-3 rounded-xl `}></TextInput>)}
                             </View>
 
                         </View>
@@ -147,16 +187,58 @@ export default function SettingsPage() {
                     {/* Daily Schedule */}
                     <View className="gap-3 ">
                         <Text className="text-2xl px-2">Daily Schedule</Text>
-                        <View className="bg-white rounded-3xl py-4 px-5 gap-6">
+                        <View className="bg-white rounded-3xl py-4 px-5 gap-5">
+
+
+                            {/* Wakeup Time */}
                             <View className={"flex-row gap-5 items-center"}>
                                 {/* <Text className="text-xl ">Wakeup Time</Text> */}
                                 <SunriseIcon fill={"gray"} width={30} height={30} />
-                                <Text className={`text-3xl flex-1 px-3 rounded-xl py-3 `}>{wakeTime.toLocaleString([], { hour: '2-digit', minute: '2-digit', hour12: true }).toUpperCase()}</Text>
+                                <Pressable disabled={!isEditModeOn} onPress={() => setShowWakeTimePicker(true)}>
+                                    <Text className={`text-2xl flex-1 px-3 rounded-xl  `}>{wakeTime
+                                        ? wakeTime.toLocaleTimeString([], {
+                                            hour: '2-digit',
+                                            minute: '2-digit',
+                                            hour12: true
+                                        }).toUpperCase()
+                                        : "--:--"}</Text>
+                                </Pressable>
+
+                                {
+                                    showWakeTimePicker && (
+                                        <DateTimePicker
+                                            testID="wakeTimePicker"
+                                            value={wakeTime}
+                                            mode="time"
+                                            is24Hour={false}
+                                            display="default" // or 'spinner' for a different look
+                                            onChange={changeWakeTime}
+                                        />
+                                    )
+                                }
                             </View>
+
+                            {/* BedTime */}
                             <View className={"flex-row gap-5 items-center"}>
                                 {/* <Text className="text-xl ">Bed Time</Text> */}
                                 <BedTimeIcon fill={"gray"} width={30} height={30} />
-                                <Text className={`text-3xl flex-1 px-3 rounded-xl py-3 `}>{bedTime.toLocaleString([], { hour: '2-digit', minute: '2-digit', hour12: true }).toUpperCase()}</Text>
+                                <Pressable disabled={!isEditModeOn} onPress={() => setShowBedTimePicker(true)}>
+                                    <Text className={`text-2xl flex-1 px-3 rounded-xl `}>{bedTime ? bedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }).toUpperCase() : "--:--"}</Text>
+
+                                </Pressable>
+
+                                {
+                                    showBedTimePicker && (
+                                        <DateTimePicker
+                                            testID="BedTimePicker"
+                                            value={bedTime}
+                                            mode="time"
+                                            is24Hour={false}
+                                            display="default" // or 'spinner' for a different look
+                                            onChange={changeBedTime}
+                                        />
+                                    )
+                                }
                             </View>
                         </View>
                     </View>
@@ -187,4 +269,8 @@ export default function SettingsPage() {
             </View>
         </SafeAreaView>
     )
+}
+
+function setHydrationData(updatedHydrationData: { dailyGoal: number; reminders: Date[]; waterPerReminder: number; activeHours: number; waterDrank: number; date: string; }) {
+    throw new Error("Function not implemented.");
 }

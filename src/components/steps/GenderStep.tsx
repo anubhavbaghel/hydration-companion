@@ -14,11 +14,11 @@ export default function GenderStep({ setGender, gender }) {
       <View className="flex flex-row items-center justify-center gap-5">
 
         <Pressable
-          className={`py-3 border items-center justify-center flex-1 rounded-3xl ${gender === "male"
+          className={`py-3 border items-center justify-center flex-1 rounded-3xl ${gender === "Male"
             ? "bg-blue-200 border-blue-600"  // Selected State
             : "bg-white border-gray-200"     // Unselected State
             }`} onPress={() => {
-              setGender("male");
+              setGender("Male");
               Haptics.performAndroidHapticsAsync(
                 Haptics.AndroidHaptics.Clock_Tick
               );
@@ -31,12 +31,12 @@ export default function GenderStep({ setGender, gender }) {
           <Text className="text-2xl font-medium text-gray-600">Male</Text>
         </Pressable>
 
-        <Pressable className={`py-3 border items-center justify-center flex-1 rounded-3xl ${gender === "female"
+        <Pressable className={`py-3 border items-center justify-center flex-1 rounded-3xl ${gender === "Female"
           ? "bg-pink-200 border-pink-600"  // Selected State
           : "bg-white border-gray-200"     // Unselected State
           }`}
           onPress={() => {
-            setGender("female");
+            setGender("Female");
             Haptics.performAndroidHapticsAsync(
               Haptics.AndroidHaptics.Clock_Tick
             );

@@ -11,7 +11,7 @@ export default function WeightStep({ weight, setWeight, gender }) {
       <Text className="text-3xl font-semibold text-gray-700">Select Your Weight (kg)</Text>
       <Text className="text-gray-600 text-center">Help us calculate your daily water goal{`\n`} based on your weight.</Text>
 
-      {(gender === "male") ? (<Image source={require("../../../assets/media/boy-on-weighing-machine.avif")} style={{ width: 100, height: 300 }} />) : (<Image source={require("../../../assets/media/girl-on-weighing-machine.avif")} style={{ width: 100, height: 300 }} />)}
+      {(gender === "Male") ? (<Image source={require("../../../assets/media/boy-on-weighing-machine.avif")} style={{ width: 100, height: 300 }} />) : (<Image source={require("../../../assets/media/girl-on-weighing-machine.avif")} style={{ width: 100, height: 300 }} />)}
 
       <Text className="text-2xl font-semibold text-gray-700">{weight} kg</Text>
       <Slider
